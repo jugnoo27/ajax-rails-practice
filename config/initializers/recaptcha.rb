@@ -1,4 +1,4 @@
 Recaptcha.configure do |config|
-  config.site_key  = "6LdR0OIbAAAAAJbqWw4lv7nK68TeWjBnMkOYo0p_"
-  config.secret_key  = "6LdR0OIbAAAAALx1jRwsKSNpNKQUfWOfP2QX3Rwd"
+ config.public_key  = ENV['RECAPTCHA_SITE_KEY']
+  config.private_key = ENV['RECAPTCHA_SECRET_KEY']
 end
