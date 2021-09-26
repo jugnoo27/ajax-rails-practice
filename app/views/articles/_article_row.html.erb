@@ -1,0 +1,10 @@
+<tr id="articleRow_<%= article.id %>">
+  <td><%= article.name %></td>
+  <td><%= article.description %></td>
+  <td><%= article.published_on %></td>
+  <td>
+    <%= link_to 'Show', article, data: { bs_toggle: "modal", bs_target: "#showArticleModal", remote: true } %>
+    ||<%= link_to 'Edit', edit_article_path(article), data: { bs_toggle: "modal", bs_target: "#editArticleModal", remote: true } %>
+    ||<%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?', remote: true } %>    
+  </td>
+</tr>

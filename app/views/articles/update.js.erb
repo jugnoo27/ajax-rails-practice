@@ -1,0 +1,6 @@
+<% if @article.errors.any? %>
+  alert("Something went wrong.");
+<% else %>
+  $("#articleRow_<%= @article.id %>").replaceWith("<%= escape_javascript render('article_row', article: @article) %>");
+  $('.close-modal').click();
+<% end %>
