@@ -1,0 +1,8 @@
+<tr id="contactRow_<%= contact.id %>">
+  <td><%= contact.name %></td>
+  <td><%= contact.email %></td>
+  <td><%= contact.message %></td>
+  <td><%= link_to 'Show', contact, data: { bs_toggle: "modal", bs_target: "#showContactModal", remote: true } %></td>
+  <td><%= link_to 'Edit', edit_contact_path(contact), data: { bs_toggle: "modal", bs_target: "#editContactModal", remote: true } %></td>
+  <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?', remote: true } %></td>
+</tr>

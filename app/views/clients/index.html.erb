@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Clients</h1>
+      <%= link_to 'New Client', new_client_path, class: 'btn btn-primary', data: { bs_toggle: "modal", bs_target: "#newClientModal", remote: true } %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th colspan="3">Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="clientTable">
+          <% @clients.each do |client| %>
+            <%= render 'client_row', client: client %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newClientModal" tabindex="-1" aria-labelledby="newClientModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newClientModalLabel">Create Client New</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="newClientForm">
+      </div>
+    </div>
+  </div>
+</div>

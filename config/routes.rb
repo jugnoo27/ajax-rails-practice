@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :clients
+  resources :contacts
   devise_for :admins, controllers: {
     sessions: 'admins/sessions'
   }

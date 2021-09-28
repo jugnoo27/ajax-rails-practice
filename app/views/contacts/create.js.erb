@@ -1,0 +1,7 @@
+<% if @contact.errors.any? %>
+  alert("Went something wrong!");
+<% else %>
+$("#contactTable").prepend("<%= escape_javascript render('contact_row', contact: @contact) %>");
+$('.close-modal').click();
+<% end %>
+
