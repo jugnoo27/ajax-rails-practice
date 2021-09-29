@@ -1,0 +1,6 @@
+<% if @client.errors.any? %>
+  alert("Went something wrong!");
+<% else %>
+  $("#clientRow_<%= @client.id %>").replaceWith("<%= escape_javascript render('client_row', client: @client) %>");
+  $(".close-modal").click();
+<% end %>
