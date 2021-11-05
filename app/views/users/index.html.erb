@@ -2,8 +2,15 @@
   <p id="notice alert alert-danger"><%= notice %></p>
 
   <h1>Users</h1>
-  <%= link_to 'New User', new_user_path, class: 'btn btn-primary mb-2', data: { bs_toggle: 'modal', bs_target: '#usersModal', remote: true } %>
-  <%= link_to 'Delete Selected', users_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger mb-2', id: 'selected_list_delete' %>
+  <div class="row">
+    <div class="col-lg-6">
+      <%= link_to 'New User', new_user_path, class: 'btn btn-primary mb-2', data: { bs_toggle: 'modal', bs_target: '#usersModal', remote: true } %>
+      <%= link_to 'Delete Selected', users_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger mb-2', id: 'selected_list_delete' %>
+    </div>
+    <div class="col-lg-6">
+      <%= render 'users/search_form' %>
+    </div>
+  </div>
   <table class="table table-bordered my-table">
     <thead>
       <tr>
