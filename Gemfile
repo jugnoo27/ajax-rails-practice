@@ -59,3 +59,4 @@ gem 'faker'
 gem "recaptcha"
 gem 'devise'
 gem 'ransack'
+gem 'kaminari'

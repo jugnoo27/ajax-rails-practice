@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
     @q = User.ransack(params[:q])
-    @users = @q.result(distinct: true).order(created_at: :desc)
+    @users = @q.result(distinct: true).order(created_at: :desc).page params[:page]
   end
 
   # GET /users/1 or /users/1.json

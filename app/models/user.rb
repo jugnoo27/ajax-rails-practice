@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  paginates_per 5
   validates :name, :address, presence: true
   validates :email, :contact, presence: true, uniqueness: true
 
