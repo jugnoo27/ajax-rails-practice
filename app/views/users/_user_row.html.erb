@@ -1,7 +1,7 @@
 <tr id="userRow_<%= user.id %>">
   <td>
-    <div class="form-check">
-      <input class="form-check-input" id="<%= user.id %>" type="checkbox" value="" >
+    <div class="form-check pl-1">
+      <%= check_box_tag(:select, value = "1", checked = user.select ? true : false , class: "selected_user_id_#{user.id}", user_id: "#{user.id}") %>
     </div>
   </td>
   <td><%= user.name %></td>
@@ -21,3 +21,13 @@
     </div>
   </td>
 </tr>
+<script type="text/javascript">
+  $('.selected_user_id_<%= user.id %>').on('click', function(){
+    user_id = $(this).attr('user_id');
+    $.ajax({
+      url: '/select_user',
+      type: 'patch',
+      data: { id: user_id}
+    })
+  })
+</script>
